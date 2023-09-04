@@ -1,0 +1,130 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 10% 1fr 20%;
+  grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+  width: 100vw;
+  height: 100vh;
+  font-size: 2vw;
+  font-weight: bolder;
+  background-color: #74aeba;
+}
+
+.header {
+  grid-area: header;
+  text-align: center;
+  padding-top: 0.5em;
+}
+
+.main {
+  display: grid;
+  grid-area: main;
+  padding: 2% 4% 4% 4%;
+  text-align: center;
+  background-color: #b6dcdd;
+  gap: 4%;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-areas:
+    "article article"
+    "section-1 section-2"
+    "section-3 section-3";
+}
+
+.article {
+  grid-area: article;
+}
+
+.section-1 {
+  grid-area: section-1;
+  text-align: center;
+  padding: 1.25em;
+  background-color: #679385;
+}
+
+.section-2 {
+  grid-area: section-2;
+  text-align: center;
+  padding: 1.25em;
+  background-color: #679385;
+}
+
+.section-3 {
+  grid-area: section-3;
+  text-align: center;
+  padding: 1.25em;
+  background-color: #679385;
+}
+
+.aside {
+  grid-area: aside;
+  text-align: center;
+  padding-top: 1.25em;
+  background-color: #507c7b;
+}
+
+.footer {
+  display: grid;
+  grid-area: footer;
+  padding: 2em;
+  background-color: #b6e3d4;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  align-content: center;
+  gap: 3%;
+}
+
+.footer_section {
+  text-align: center;
+  padding: 1.25em;
+  background-color: #6fad98;
+}
+
+@media screen and (max-width: 1024px) {
+  .grid-container {
+    display: grid;
+    font-size: 1em;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 10% 1fr;
+    grid-template-areas:
+      "header header"
+      "main aside";
+  }
+
+  .footer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .grid-container {
+    display: grid;
+    font-size: 1em;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 10% 1fr;
+    grid-template-areas:
+      "header header"
+      "main aside";
+  }
+
+  .footer {
+    display: none;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr;
+    gap: 4%;
+    justify-content: space-between;
+    grid-template-areas:
+      "article"
+      "section-1"
+      "section-2"
+      "section-3";
+  }
+}
